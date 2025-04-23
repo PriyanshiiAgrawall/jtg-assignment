@@ -81,4 +81,30 @@ closeBtn.addEventListener('click', () => {
     document.body.classList.remove('modal-open');
 });
 
+//mobile menu
+
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
+const closeMenu = document.querySelector('.close-menu');
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+
+const mobileMenuItems = document.querySelectorAll('.mobile-menu-items a');
+mobileMenuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
+
+
 
